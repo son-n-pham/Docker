@@ -60,7 +60,7 @@ We can commit the stopped container by its Container ID to make a new image, whi
 
 ![image](https://user-images.githubusercontent.com/79841341/128890908-0895f35f-0917-403e-9221-0e76cdfadc7e.png)
 
-![image](https://user-images.githubusercontent.com/79841341/129069980-12ec3ef5-ba11-4ae5-b042-ec06f010edb0.png)
+![image](https://user-images.githubusercontent.com/79841341/129070133-c23680ed-9476-41b7-ade5-b7c7c2f8bc4d.png)
 
 ### Here is an example.
 

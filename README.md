@@ -94,3 +94,31 @@ docker attach hard_core_elbakyan
 
 # when running container, we can use Ctrl+p Ctrl+q to detach it.
 ```
+
+![image](https://user-images.githubusercontent.com/79841341/129030313-e1c61289-63db-4fc2-8869-2e419fec1e8a.png)
+
+![image](https://user-images.githubusercontent.com/79841341/129030447-a8bfd648-a89d-421a-9e9d-45f92ef6f9f3.png)
+
+***docker exec*** can be used to start another process in an existing container. But we cannot add ports, volume etc.
+
+![image](https://user-images.githubusercontent.com/79841341/129031197-ac4a63fa-1994-4679-98e6-da376f9b465d.png)
+
+-c to run the command after opening the container
+
+![image](https://user-images.githubusercontent.com/79841341/129032209-904885c4-61da-4c93-8549-b2e0414db55e.png)
+
+## Manage Containers
+
+***docker logs*** show all the whole log of a specific container.
+
+```docker
+docker logs CONTAINER
+```
+
+![image](https://user-images.githubusercontent.com/79841341/129031724-e16e1fa2-0dc5-4787-aa64-91ac25b6a432.png)
+
+--name gives the name for the container
+
+***docker kill*** stops a container, ***docker rm*** remove a container
+
+![image](https://user-images.githubusercontent.com/79841341/129033546-1ef69a39-3218-431f-9804-e1f89579b269.png)

@@ -60,6 +60,8 @@ We can commit the stopped container by its Container ID to make a new image, whi
 
 ![image](https://user-images.githubusercontent.com/79841341/128890908-0895f35f-0917-403e-9221-0e76cdfadc7e.png)
 
+![image](https://user-images.githubusercontent.com/79841341/129069980-12ec3ef5-ba11-4ae5-b042-ec06f010edb0.png)
+
 ### Here is an example.
 
 I run an image, create file MY-VERY-IMPORTANT-FILE, exit, run *docker ps -l* (to have the info of the recent container).

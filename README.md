@@ -75,12 +75,12 @@ The shortcut is just using docker commit with Container Names and give the new i
 
 ### Other docker run options:
 
-rm will remove container after exit the container
+--rm will remove container after exit the container
 ```docker
 docker run --rm -ti my-image:latest
 ```
 
-d will automatically detach the running container. We can attach it back later.
+-d will automatically detach the running container. We can attach it back later.
 
 ```docker
 docker run --rm -ti my-image:latest

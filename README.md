@@ -1,6 +1,4 @@
-# Docker
-
-## Install Docker for Desktop
+# Install Docker for Desktop
 https://hub.docker.com/
 
 Ater intallation, run the below to check:
@@ -15,7 +13,10 @@ docker run hello-world
 
 ![image](https://user-images.githubusercontent.com/79841341/128884631-51165571-9d4f-4008-978b-3134cd2f1a18.png)
 
-## Using docker
+# USING DOCKER
+
+## The Docker Flow
+
 To view existing images, run the below
 
 ```docker
@@ -73,7 +74,7 @@ The shortcut is just using docker commit with Container Names and give the new i
 
 ![image](https://user-images.githubusercontent.com/79841341/128893248-f7ac6107-9fcc-49ff-8962-e643661ab8ff.png)
 
-### Other docker run options:
+## Docker run options:
 
 --rm will remove container after exit the container
 ```docker
@@ -122,3 +123,4 @@ docker logs CONTAINER
 ***docker kill*** stops a container, ***docker rm*** remove a container
 
 ![image](https://user-images.githubusercontent.com/79841341/129033546-1ef69a39-3218-431f-9804-e1f89579b269.png)
+

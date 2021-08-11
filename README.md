@@ -73,7 +73,24 @@ The shortcut is just using docker commit with Container Names and give the new i
 
 ![image](https://user-images.githubusercontent.com/79841341/128893248-f7ac6107-9fcc-49ff-8962-e643661ab8ff.png)
 
+### Other docker run options:
 
+rm will remove container after exit the container
+```docker
+docker run --rm -ti my-image:latest
+```
 
+d will automatically detach the running container. We can attach it back later.
 
+```docker
+docker run --rm -ti my-image:latest
 
+# Container will be automatically detached and run in the background
+# docker ps is run to retrieve that container info
+docker ps
+
+# docker attach is run with the container name to re-attach it.
+docker attach hard_core_elbakyan
+
+# when running container, we can use Ctrl+p Ctrl+q to detach it.
+```

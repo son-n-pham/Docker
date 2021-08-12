@@ -179,5 +179,15 @@ docker port echo-server
 
 ![image](https://user-images.githubusercontent.com/79841341/129213309-427f1910-ad05-473b-91cc-09f8744287ed.png)
 
+The above are to expose TCP port. Docker can expose UDP ports also. TCP is the default option, for the UDP, we can use the universal syntax below:
+
+```docker
+docker run -p outside-port:inside-port/prototol (tcp/udp)
+```
+
+The nc tool just needs to have addition -u option to handle udp.
+
+![image](https://user-images.githubusercontent.com/79841341/129214617-a77ad095-71a3-4f29-93e1-48f9a77c1003.png)
+
 ## Container Network
 

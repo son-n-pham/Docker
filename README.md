@@ -153,7 +153,8 @@ docker run --rm -ti -p 45678:45678 -p 45679:45679 --name echo-server ubuntu
 
 2 bash terminals connect to docker port through localhost
 
-![image](https://user-images.githubusercontent.com/79841341/129149711-76c736b5-f184-4b26-a3b7-53c3a871d292.png)
+![Untitled_ Aug 12, 2021 2_17 PM (2)](https://user-images.githubusercontent.com/79841341/129150235-35327274-321b-4c22-baa4-df1b7df03123.gif)
+
 
 
 

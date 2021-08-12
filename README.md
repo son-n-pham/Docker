@@ -149,6 +149,10 @@ Exposing a specific port:
 # name was given to the container and the container is running in the terminal
 # interactive mode (-ti). The container will be removed after it is stopped.
 docker run --rm -ti -p 45678:45678 -p 45679:45679 --name echo-server ubuntu
+
+# Inside docker container, run "nc -lp 45678 | nc -lp 45679"
+# for this container to listening to its exposed ports
+nc -lp 45678 | nc -lp 45679
 ```
 
 ![image](https://user-images.githubusercontent.com/79841341/129150543-e3b39fff-8e41-4ce4-8855-e7d79ec2be8e.png)
@@ -158,8 +162,22 @@ docker run --rm -ti -p 45678:45678 -p 45679:45679 --name echo-server ubuntu
 
 ![image](https://user-images.githubusercontent.com/79841341/129150600-e648e57a-c271-453b-a3b4-10758e4f349c.png)
 
+For other containers connecting to the exposed ports, those containers need to use special "host.docker.internal", then the outer port numbers.
 
+![image](https://user-images.githubusercontent.com/79841341/129212053-2535548c-5504-4e3c-adc0-b8307cecccbe.png)
 
+We can expose ports dynamically by fixing the port inside only.
+
+```docker
+docker run --rm -ti -p 45678 -p 45679 --name echo-server ubuntu_nc
+```
+In this case, in other terminals, we need to run "docker port" with the exposed container to know the port outside to connect. Syntax will be similar to the below.
+
+```docker
+docker port echo-server
+```
+
+![image](https://user-images.githubusercontent.com/79841341/129213309-427f1910-ad05-473b-91cc-09f8744287ed.png)
 
 ## Container Network
 

@@ -151,9 +151,12 @@ Exposing a specific port:
 docker run --rm -ti -p 45678:45678 -p 45679:45679 --name echo-server ubuntu
 ```
 
+![image](https://user-images.githubusercontent.com/79841341/129150543-e3b39fff-8e41-4ce4-8855-e7d79ec2be8e.png)
+
+
 2 bash terminals connect to docker port through localhost
 
-![Untitled_ Aug 12, 2021 2_17 PM (2)](https://user-images.githubusercontent.com/79841341/129150235-35327274-321b-4c22-baa4-df1b7df03123.gif)
+![image](https://user-images.githubusercontent.com/79841341/129150600-e648e57a-c271-453b-a3b4-10758e4f349c.png)
 
 
 

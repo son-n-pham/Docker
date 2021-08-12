@@ -216,7 +216,22 @@ docker run --rm -ti --net learning --name catserver ubuntu20
 
 ![image](https://user-images.githubusercontent.com/79841341/129219663-a12ec05b-3cda-4798-b03e-d1f51444a301.png)
 
-Now, on the right, we create the new dogserver container. Now the left of catserver can ping dogserver on the right and vice versa. We can run nc with the dogserver name instead of the default "host.internal."
+Now, on the right, we create the new dogserver container. Now the left of catserver can ping dogserver on the right and vice versa. We can run nc with the dogserver name instead of the default "host.docker.internal". This is one network with 2 machines (servers)
 
 ![image](https://user-images.githubusercontent.com/79841341/129221274-0bc2bbc9-c502-49f7-a3b9-cdb1a2d75e72.png)
 
+Now it is more interesting when we make another network catsonly
+
+```docker
+docker network create catsonly
+```
+
+![image](https://user-images.githubusercontent.com/79841341/129222044-c8d5b5fe-8737-4986-af8d-2a889e3dcc8e.png)
+
+We can run the below to connect catserver in learning network to the new network catsonly.
+
+```docker
+docker network catsonly catserver
+```
+
+When connecting catserver to catsonly network, catserver can connect both container in catsonly and learning networks. Other containers in those 2 network cannot communicate with others in the other side.

@@ -203,3 +203,20 @@ docker network ls
 bridge, host and none are default network. Bridge is to connect other server without preferences, host is too open and have no network isolation while none is no network at all.
 
 ***docker network create NETWORK_NAME*** can be used to create a new network
+
+```docker
+docker network create learning
+```
+
+Then we can run the container on the new network ***learning*** by adding ***--net learning***. As the result, we can ping containter catserver in network learning. However, the attempt to ping dogserver is not working as it is not existing.
+
+```docker
+docker run --rm -ti --net learning --name catserver ubuntu20
+```
+
+![image](https://user-images.githubusercontent.com/79841341/129219663-a12ec05b-3cda-4798-b03e-d1f51444a301.png)
+
+Now, on the right, we create the new dogserver container. Now the left of catserver can ping dogserver on the right and vice versa. We can run nc with the dogserver name instead of the default "host.internal."
+
+![image](https://user-images.githubusercontent.com/79841341/129221274-0bc2bbc9-c502-49f7-a3b9-cdb1a2d75e72.png)
+

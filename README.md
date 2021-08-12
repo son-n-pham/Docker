@@ -191,3 +191,15 @@ The nc tool just needs to have addition -u option to handle udp.
 
 ## Container Network
 
+To list all available network:
+
+```docker
+docker network ls
+
+```
+
+![image](https://user-images.githubusercontent.com/79841341/129215226-5284b2cb-466f-4ee9-8c1e-0170f4ef940c.png)
+
+bridge, host and none are default network. Bridge is to connect other server without preferences, host is too open and have no network isolation while none is no network at all.
+
+***docker network create NETWORK_NAME*** can be used to create a new network

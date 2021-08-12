@@ -126,5 +126,30 @@ docker logs CONTAINER
 
 ![image](https://user-images.githubusercontent.com/79841341/129033546-1ef69a39-3218-431f-9804-e1f89579b269.png)
 
+# Exposing ports:
+
+Docker allow several options for network.
+- For internal:
+  - Programs in containers are isolated from the internet by default
+  - We can group our containers into "private" network
+  - We explicitly select who can connect whom
+- For outer:
+  - Docker allows to expose ports to let connections in
+  - private network to connect between containers.
+
+Exposing a specific port:
+- Explicitly specifies the port inside the container and outside
+- Exposes as many ports as we want
+- Requires coordination between containers
+- Makes it easy to find the exposed ports
+
+
+```docker
+# Example: The below will open image ubuntu, and also expose 2 ports with the same inner and outer port numbers,
+# name was given to the container and the container is running in the terminal
+# interactive mode (-ti). The container will be removed after it is stopped.
+docker run --rm -ti -p 45678:45678 -p 45679:45679 --name echo-server ubuntu
+```
+
 ## Container Network
 

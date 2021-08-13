@@ -235,3 +235,28 @@ docker network catsonly catserver
 ```
 
 When connecting catserver to catsonly network, catserver can connect both container in catsonly and learning networks. Other containers in those 2 network cannot communicate with others in the other side.
+
+## Images
+
+***docker images*** to list all images
+
+***docker commit CONTAINER_NAME/ID NEW_IMAGE_NAME:TAG***
+
+Image can come from ***docker pull*** or are automatically downloaded when we use ***docker run*** but that image is not in the device yet.
+
+Clearning up image by ***docker rmi***
+
+## Volumes
+
+It is used to sharing data between containers or containers and host. Volumes are not part of images, and can be:
+- Persistent: Still exist after containers are closed.
+- Ephemeral: Disappear when containers are gone.
+
+Sharing data with the Host: It is persistent. ***-v*** option is used to achieve this goal.
+
+```docker
+docker run --rm -ti -v HOST_FOLDER:CONTAINER_FOLDER --name echo-server ubuntu20
+```
+
+![image](https://user-images.githubusercontent.com/79841341/129377882-29da44c8-87f0-4ba0-ad31-afbc07664092.png)
+

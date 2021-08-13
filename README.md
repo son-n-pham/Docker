@@ -246,13 +246,15 @@ Image can come from ***docker pull*** or are automatically downloaded when we us
 
 Clearning up image by ***docker rmi***
 
+***docker tag*** can be used to give names to images
+
 ## Volumes
 
 It is used to sharing data between containers or containers and host. Volumes are not part of images, and can be:
 - Persistent: Still exist after containers are closed.
 - Ephemeral: Disappear when containers are gone.
 
-Sharing data with the Host: It is persistent. ***-v*** option is used to achieve this goal.
+### Sharing data with the Host: It is persistent. ***-v*** option is used to achieve this goal.
 
 ```docker
 docker run --rm -ti -v HOST_FOLDER:CONTAINER_FOLDER --name echo-server ubuntu20
@@ -260,3 +262,20 @@ docker run --rm -ti -v HOST_FOLDER:CONTAINER_FOLDER --name echo-server ubuntu20
 
 ![image](https://user-images.githubusercontent.com/79841341/129377882-29da44c8-87f0-4ba0-ad31-afbc07664092.png)
 
+### Sharing data between containers: It is ephemral. As long as there is one container with the shared folder, the shared folder still exist.
+
+![image](https://user-images.githubusercontent.com/79841341/129382841-44afec7c-88d1-4d40-af8e-cc633acb4483.png)
+
+## Docker registries
+
+***docker search*** command to search images
+
+```docker
+docker search ubuntu
+```
+
+We can also search images in hub.docker.com
+
+***docker login*** command to log in docker in CLI
+
+***docker push*** command can publish docker images

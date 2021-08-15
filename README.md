@@ -4,7 +4,7 @@
     + [Here is an example.](#here-is-an-example)
   * [Docker run options:](#docker-run-options-)
   * [Manage Containers](#manage-containers)
-- [Exposing ports:](#exposing-ports-)
+  * [Exposing ports:](#exposing-ports-)
   * [Container Network](#container-network)
   * [Images](#images)
   * [Volumes](#volumes)
@@ -150,7 +150,7 @@ docker logs CONTAINER
 
 ![image](https://user-images.githubusercontent.com/79841341/129033546-1ef69a39-3218-431f-9804-e1f89579b269.png)
 
-# Exposing ports:
+## Exposing ports:
 
 Docker allow several options for network.
 - For internal:

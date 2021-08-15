@@ -294,3 +294,88 @@ We can also search images in hub.docker.com
 docker build -t name_of_result folder_where_to_find_dockerfile
 ```
 
+## Building Dockerfiles
+Build a Dockerfile in the current working folder, its content is as below:
+- First line: Build the new image from image debian:sid
+- Second line: run apt update in the new container. -y is to say yes when the update command asks y/n
+- Third line: install nano program
+- Forth line: run nano program to create file notes in /tmp folder.
+```Docker
+FROM debian:sid
+RUN apt-get -y update
+RUN apt-get -y install nano
+CMD ["/bin/nano", "/tmp/notes"]
+```
+
+Run the new Dockerfile
+```Docker
+docker build -t example/nanoer .
+```
+![image](https://user-images.githubusercontent.com/79841341/129466950-c537f753-ad06-44b2-8a0b-0325354655e5.png)
+
+We can add file from our current folder into the new image from the Dockerfile by creating a new DOckerfile
+
+![image](https://user-images.githubusercontent.com/79841341/129467099-6e2fddf9-a44a-44e2-ba36-5e1c853a7cdf.png)
+
+## Dockerfile syntax
+- FROM statement
+- MAINTAINER statement
+  - Define the author of this Dockerfile
+  - Syntax: MAINTAINER Firstname Lastname <exmail@example.com>
+- RUN statement: Runs the command line, wait for it to finish and saves the result.
+  - Example: RUN unzip install.zip /opt/install/
+- ADD statement:
+  - Adds local files: Add run.sh /run.sh
+  - Adds **the contents** of tar archieves: ADD project.tar.gz /install/
+  - Works with URLs: ADD https://project.example.com/download/1.0/project.rpm /project/
+- ENV statement:
+  - Set environment variables
+  - Both during the build and when running the result:
+    - ENV DB_HOST=db.production.example.com
+    - ENV DB_PORT=5432
+- ENTRYPOINT RUN and CMD statements:
+  - They can use either form:
+    - Shell form: nano notes.txt
+    - Exec form: ["/bin/nano", "notes.txt"]
+- EXPOSE statement:
+  - Maps a port into the container
+    - EXPOSE 8080
+- VOLUME statement:
+  - Define shared or ephemeral volumes:
+    - VOLUME ["/host/path/" "/container/path/"]
+    - VOLUME ["shared-data"]
+  - Avoid defining shared folders in Dockerfiles
+- WORKDIR statement
+  - Sets the directory when container starts
+  - Similar to cd
+    - WORKDIR /install/
+- USER statement
+  - Sets which user the container will run as
+    - USER arthur
+    - USER 1000
+
+## Multiproject Dockerfiles:
+- Image can be big
+- We can have 2 FROM in one dockerfile, the first one as the builder to give the result we want, then then second use the result of the first one. By that way, the result can be big.
+- Example:
+  - This Dockerfile generates a big image as it is downloading the whole Ubuntu
+
+```Docker
+FROM ubuntu as builder
+RUN apt-get -y update
+RUN apt-get -y install curl
+RUN curl https://google.com | wc -c > google_size
+ENTRYPOINT echo google is this big; cat google_size
+```
+  - We can have 2 FROM and the result using the small alpine, thus the final image is small, which is only 5.6MB
+```Docker
+FROM ubuntu as builder
+RUN apt-get -y update
+RUN apt-get -y install curl
+RUN curl https://google.com | wc -c > google_size
+
+FROM alpine
+COPY --from=builder /google_size /google_size
+ENTRYPOINT echo google is this big; cat google_size
+```
+![image](https://user-images.githubusercontent.com/79841341/129467931-5bbef482-58c9-4aef-a8e5-9d0c57a77f7f.png)

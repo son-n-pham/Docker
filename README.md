@@ -1,25 +1,3 @@
-- [Install Docker for Desktop](#install-docker-for-desktop)
-- [USING DOCKER](#using-docker)
-  * [The Docker Flow](#the-docker-flow)
-    + [Here is an example.](#here-is-an-example)
-  * [Docker run options:](#docker-run-options-)
-  * [Manage Containers](#manage-containers)
-  * [Exposing ports:](#exposing-ports-)
-  * [Container Network](#container-network)
-  * [Images](#images)
-  * [Volumes](#volumes)
-    + [Sharing data with the Host: It is persistent. ***-v*** option is used to achieve this goal.](#sharing-data-with-the-host--it-is-persistent-----v----option-is-used-to-achieve-this-goal)
-    + [Sharing data between containers: It is ephemral. As long as there is one container with the shared folder, the shared folder still exist.](#sharing-data-between-containers--it-is-ephemral-as-long-as-there-is-one-container-with-the-shared-folder--the-shared-folder-still-exist)
-  * [Docker registries](#docker-registries)
-- [Building Docker Images](#building-docker-images)
-  * [What are Dockerfiles?](#what-are-dockerfiles-)
-  * [Building Dockerfiles](#building-dockerfiles)
-  * [Dockerfile syntax](#dockerfile-syntax)
-  * [Multiproject Dockerfiles:](#multiproject-dockerfiles-)
-- [Orchestration: Building Systems with Docker](#orchestration--building-systems-with-docker)
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 # Install Docker for Desktop
 https://hub.docker.com/
 

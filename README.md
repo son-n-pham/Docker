@@ -279,3 +279,18 @@ We can also search images in hub.docker.com
 ***docker login*** command to log in docker in CLI
 
 ***docker push*** command can publish docker images
+
+# Building Docker Images
+
+## What are Dockerfiles?
+- a small "program" to create an image
+- Run with the below:
+  - Use docker build to run the Dockerfiles
+  - -t for tag to give the tag after the run
+  - When finished, result is in the local docker registry
+  - Each line in Dockerfile takes the previous image from the previous line and make another image. The previous image is unchanged => don't want dockerfile with large file and lots of lines
+  - Dockerfiles are not shell scripts. Processes on oneline will not be running on the next line. If we want to execute both of them, we need to put them on the same line.
+```Docker
+docker build -t name_of_result folder_where_to_find_dockerfile
+```
+

@@ -164,6 +164,7 @@ Exposing a specific port:
 - Exposes as many ports as we want
 - Requires coordination between containers
 - Makes it easy to find the exposed ports
+- -p host_port:container_port is used to expose port of the host and define the port for container to connect. If container_port is not defined, docker will assign a port number automatically.
 
 
 ```docker
@@ -188,7 +189,7 @@ For other containers connecting to the exposed ports, those containers need to u
 
 ![image](https://user-images.githubusercontent.com/79841341/129212053-2535548c-5504-4e3c-adc0-b8307cecccbe.png)
 
-We can expose ports dynamically by fixing the port inside only.
+We can expose ports dynamically by defining the port of the host only.
 
 ```docker
 docker run --rm -ti -p 45678 -p 45679 --name echo-server ubuntu_nc

@@ -266,7 +266,7 @@ When connecting catserver to catsonly network, catserver can connect both contai
 
 Image can come from ***docker pull*** or are automatically downloaded when we use ***docker run*** but that image is not in the device yet.
 
-Clearning up image by ***docker rmi***
+Cleaning up image by ***docker rmi***
 
 ***docker tag*** can be used to give names to images
 

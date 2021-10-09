@@ -150,6 +150,8 @@ docker logs CONTAINER
 
 ## Exposing ports:
 
+![image](https://user-images.githubusercontent.com/79841341/136649505-4c511ad9-3b15-495b-ba86-79dee816c5c0.png)
+
 Docker allow several options for network.
 - For internal:
   - Programs in containers are isolated from the internet by default
